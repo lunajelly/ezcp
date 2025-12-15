@@ -29,7 +29,7 @@
 			
 			qs("main-active").append(fragment);
 			
-			qsa("p").forEach(el => el.addEventListener("click", ev => ui.copyOutputLink(ev.currentTarget)));
+			qsa("p").forEach(el => el.addEventListener("click", ev => ui.copyText(ev.currentTarget)));
 	
 		} , { once: true }); //cleanup, End window.onload.
 		
