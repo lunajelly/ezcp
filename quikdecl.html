@@ -2,6 +2,38 @@
 <html>
 
 <head>
+	<script src="ali-util.js"></script>
+	<script src="quickdecl-msgs.js"></script>
+	<script>		
+		
+		const ui = {
+			async copyText(ele) {
+				let text = ele.textContent;
+				await navigator.clipboard.writeText(text);
+			}
+		};
+		
+		window.addEventListener("load", (e) => {		
+							
+			const fragment = document.createDocumentFragment();
+			
+			//const msgs from quickdecl_msgs.js
+			const msgs_arr = msgs.trim().split('\n');
+			
+			msgs_arr.forEach(msg => {
+				const p = document.createElement("p");
+				p.textContent = msg;
+				p.tabIndex = 0; //SR access
+				fragment.append(p);
+				});
+			
+			qs("main-active").append(fragment);
+			
+			qsa("p").forEach(el => el.addEventListener("click", ev => ui.copyOutputLink(ev.currentTarget)));
+	
+		} , { once: true }); //cleanup, End window.onload.
+		
+	</script>
 	<style>
 		body {
 			background-color: black;
@@ -28,54 +60,12 @@
 		}
 
 	</style>
-	
-	<script src="ali-util.js"></script>
-	<script src="quickdecl-msgs.js"></script>
-	<script>		
-		
-		const ui = {
-			//copy output link on click
-			async copyOutputLink(ele) {
-				let copyText = ele.textContent;
-				l("oo  aa");
-				await navigator.clipboard.writeText(copyText);
-			}
-		};
-		
-		window.addEventListener("load", (event) => {		
-				
-			//const msgs from quickdecl_msgs.js
-			const msgs_arr = msgs.trim().split('\n');
-			
-			const fragment = document.createDocumentFragment();
-			
-			for (const msg of msgs_arr) {
-				const p = document.createElement("p");
-				p.textContent = msg;
-				p.tabIndex = 0;
-				fragment.append(p);
-			}
-			
-			
-			qs("main").append(fragment);
-			
-			qsa("p").forEach(ele => ele.addEventListener("click", ev => ui.copyOutputLink(ev.currentTarget)));
-			
-			
-			
-		} , {
-				once: true //cleanup
-			}); //End window.onload.
-		
-	</script>
 
 </head>
 <body>
 	<intro-div>>>Click a paragraph below to copy</intro-div>
 	
-	<main>
-	</main>
-
+	<main-active></main-active>
 </body>
 
 </html>
