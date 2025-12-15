@@ -15,9 +15,10 @@
 		
 		window.addEventListener("load", (e) => {		
 							
+			
 			const fragment = document.createDocumentFragment();
 			
-			//const msgs from quickdecl_msgs.js
+			//msgs from quickdecl-msgs.js
 			const msgs_arr = msgs.trim().split('\n');
 			
 			msgs_arr.forEach(msg => {
@@ -28,6 +29,8 @@
 				});
 			
 			qs("main-active").append(fragment);
+			
+			
 			
 			qsa("p").forEach(el => el.addEventListener("click", ev => ui.copyText(ev.currentTarget)));
 	
@@ -45,14 +48,12 @@
 		}
 
 		p { 
-			width: 100%; 
 			padding-left: 1em;
-
+			font-size: large;
 		}
 		
 		p:active {
 			color: #ff98ef;
-			background-color: #470c79;
 		}
 
 		p:hover { color: #2392b4; }
