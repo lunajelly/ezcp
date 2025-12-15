@@ -2,6 +2,50 @@
 
 const msgs = `
 
+help
+help, emergency, just enter don't call
+do not leave. its an emergency.  
+nebulizer
+进来 😊。把门关紧 😱 。请不做什么东西我不问您。
+
+Put the nebulizer on me 
+Put the nebulizer mask on me 
+hot water salt
+cheese olive oil
+
+I cannot move
+I cannot breathe.
+
+close the window
+Turn off air conditioner
+seal the gap from outside air
+Take that thing out right now 
+put the cart back
+停止！
+stop! 
+
+do not leave. its an emergency.  
+wait 
+等等
+wait for me to finish typing i cannot speak
+sit down
+yes 
+no 
+Wai
+NOW
+馬上
+do not do that
+put that down
+
+READ YOUR TEXTS I CANNOT SPEAK
+
+进来 😊。把门关紧 😱 。请不做什么东西我不问您。
+Come in. Shut the door. do not do anything extra.
+🚫😱 别进来。😱🚫
+Don't come in.
+
+_____
+
 turn off the screen
 turn off the phone
 yes
@@ -23,51 +67,6 @@ set notification volume to 4
 set notification volume to max
 
 _____
-
-help
-help, emergency
-emergency come quickly. do not call to enter. just come in.
-emergency come quickly. call before you enter.
-
-please do not do that
-
-do not leave. its an emergency.  
-wait 
-等等
-wait for me to finish typing i cannot speak
-sit down
-yes 
-no 
-Wai
-NOW
-馬上
-stop! 
-停止！
-do not do that
-put that down
-
-nebulizer
-Put the nebulizer on me 
-Put the nebulizer mask on me 
-hot water salt
-cheese olive oil
-
-I cannot move
-I cannot breathe.
-
-close the window
-Turn off air conditioner
-seal the gap from outside air
-Take that thing out right now 
-put the cart back
-
-READ YOUR TEXTS I CANNOT SPEAK
-read your texts
-
-进来 😊。把门关紧 😱 。请不做什么东西我不问您。
-Come in. Shut the door. do not do anything extra.
-🚫😱 别进来。😱🚫
-Don't come in.
 
 what is happening today? When is whoever is helping staying until?
 What time are you leaving today?
