@@ -37,14 +37,13 @@
 		const ui = {
 			//copy output link on click
 			copyOutputLink(ele) {
-				l("foo");
 				let copyText = ele.textContent;
 				navigator.clipboard.writeText(copyText)
 				      .then(() => {
-					l("successfully copied");
+					l("copied");
 				})
 					.catch(() => {
-					l("something went wrong");
+					l("not copied");
 				});
 			}
 		};
@@ -71,7 +70,6 @@
 				once: true //cleanup
 			}); //End window.onload.
 		
-			l("o");
 	</script>
 
 </head>
