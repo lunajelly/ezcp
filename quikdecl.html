@@ -8,227 +8,78 @@
 			color: white;
 			box-sizing: border-box;
 			margin-left: 2em;
-
 		}
 
-		p {
-			width: 100%;
-		}
-
+		p { width: 100%; }
+		
 		p:active {
 			color: #ff98ef;
 			background-color: #472bde;
-
 		}
 
-		p:hover {
-			color: #2392b4;
-		}
+		p:hover { color: #2392b4; }
 
-		#copy-tooltip {
-			background-color: #18187b;
-
-			font-style: italic;
-			width: 100%;
-
-		}
-
-		div {
+		intro-div {
+			display: block;
 			font-style: italic;
 			color: #80f2cf;
+			background-color: #18187b;
+			font-style: italic;
+			width: 100%;
 		}
 
 	</style>
-	<script>
-		//copy output link on click
-		function copyOutputLink(ele) {
-			let copyText = ele.textContent;
-			navigator.clipboard.writeText(copyText);
-		}
-
+	
+	<script src="ali-util.js"></script>
+	<script src="quickdecl-msgs.js"></script>
+	<script>		
+		
+		const ui = {
+			//copy output link on click
+			copyOutputLink(ele) {
+				l("foo");
+				let copyText = ele.textContent;
+				navigator.clipboard.writeText(copyText)
+				      .then(() => {
+					l("successfully copied");
+				})
+					.catch(() => {
+					l("something went wrong");
+				});
+			}
+		};
+		
+		window.addEventListener("load", (event) => {
+				
+				l("oo");
+			//const msgs from quickdecl_msgs.js
+			const msgs_arr = msgs.trim().split('\n');
+			
+			const fragment = document.createDocumentFragment();
+			
+			for (const msg of msgs_arr) {
+				const p = document.createElement("p");
+				p.textContent = msg;
+				p.tabIndex = 0;
+				p.onclick = ui.copyOutputLink(this);
+				fragment.append(p);
+			}
+			qs("main").append(fragment);
+			
+			qsa("p").forEach(ele => ele.addEventListener("click", ev => ui.copyOutputLink(ev.currentTarget)));
+		} , {
+				once: true //cleanup
+			}); //End window.onload.
+		
+			l("o");
 	</script>
 
 </head>
-
-
 <body>
-
-	<div id="copy-tooltip" aria-live="polite">>>Click a paragraph below to copy</div>
+	<intro-div>>>Click a paragraph below to copy</intro-div>
 	
-	<p onclick="copyOutputLink(this)">turn off the screen</p>
-	
-	<p onclick="copyOutputLink(this)">turn off the phone</p>
-	
-	<p onclick="copyOutputLink(this)">yes</p>
-	
-	<p onclick="copyOutputLink(this)">help</p>
-	
-	<p onclick="copyOutputLink(this)">emergency</p>
-	
-	<p onclick="copyOutputLink(this)">nebulizer</p>
-	
-	<p onclick="copyOutputLink(this)">nebulizer; cannot move</p>
-
-	<p onclick="copyOutputLink(this)">进来 😊。把门关紧 😱 。请不做什么东西我不问您。</p>
-
-	<p onclick="copyOutputLink(this)">Come in. Shut the door. do not do anything extra.</p>
-
-	<p onclick="copyOutputLink(this)">🚫😱 别进来。😱🚫</p>
-
-
-	<p onclick="copyOutputLink(this)">Don't come in.</p>
-
-	<p onclick="copyOutputLink(this)">📞 先打电话。 📞</p>
-
-	<div>__Stop what you are doing__</div>
-	<p onclick="copyOutputLink(this)">停止做其他人事</p>
-
-	<div>__Leave the room at once__</div>
-	<p onclick="copyOutputLink(this)">馬上離開房間</p>
-
-	<div> __take this item out at once.__</div>
-	<p onclick="copyOutputLink(this)">馬上把這個東西拿走。</p>
-
-	<p onclick="copyOutputLink(this)">把這個東西拿走。</p>
-
-	<div>__I cannot breathe.__</div>
-
-	<p onclick="copyOutputLink(this)">我不能呼吸</p>
-
-	<div>__close window at once__</div>
-
-	<p onclick="copyOutputLink(this)">馬上关窗</p>
-
-	<div>__Turn off air conditioner at once__</div>
-
-	<p onclick="copyOutputLink(this)">馬上關冷氣機。</p>
-
-	<div>__put the cart back__</div>
-
-	<p onclick="copyOutputLink(this)">把車子放回原來地方</p>
-
-	<div>__fix the chair__</div>
-
-	<p onclick="copyOutputLink(this)">把椅子放好。</p>
-
-	<p> move it to here</p>
-
-	<p onclick="copyOutputLink(this)">搬到這邊來。</p>
-
-
-	<p onclick="copyOutputLink(this)">你刚才打电话了? 请给我发短信💬,我不可以打电话🚫📞。</p>
-
-	<p onclick="copyOutputLink(this)">You called just now? What is it? Please text me, I can't use the phone. </p>
-
-	<p onclick="copyOutputLink(this)">Busy. Get back to you in a while.</p>
-
-	<p onclick="copyOutputLink(this)"> Get back to you in a moment.</p>
-
-	<p onclick="copyOutputLink(this)">Feeling poorly, get back to you on a good day.</p>
-
-	<p onclick="copyOutputLink(this)">either my hands cannot type anymore or I cannot speak anymore. I got to go. I'll talk to you later- sending you my best </p>
-
-	<p onclick="copyOutputLink(this)">Noisy</p>
-
-	<p onclick="copyOutputLink(this)">what is happening today? When is whoever is helping staying until? </p>
-
-	<p onclick="copyOutputLink(this)">What time are you leaving today?</p>
-
-	<p onclick="copyOutputLink(this)">你什么时候走?</p>
-
-	<p onclick="copyOutputLink(this)">put food away</p>
-
-
-	<p onclick="copyOutputLink(this)">egg cheese beef breakfast sausage hashbrown Vitamin D b12</p>
-
-	<p onclick="copyOutputLink(this)">egg cheese beef breakfast sausage hashbrown Vitamin D b12; no onions, no basil</p>
-
-
-	<p onclick="copyOutputLink(this)">egg cheese beef breakfast sausage Vitamin D b12</p>
-
-	<p onclick="copyOutputLink(this)">egg 🥚🥚cheese 🧀🧀, beef 🐄 breakfast sausage 🌭 hashbrown 🥔
-		Vitamin D b12 💊; no onions❌ 🧅, no basil❌🌿</p>
-
-
-	<p onclick="copyOutputLink(this)">Pancake cheese ground beef</p>
-
-	<p onclick="copyOutputLink(this)">Handkerchiefs</p>
-
-	<p onclick="copyOutputLink(this)">period underwear</p>
-
-	<p onclick="copyOutputLink(this)"> toilet paper. </p>
-
-
-	<p onclick="copyOutputLink(this)">Bring water set. </p>
-
-	<p onclick="copyOutputLink(this)">Bring water set when I ask you to put food away</p>
-
-	<p onclick="copyOutputLink(this)">Bring water set before you leave. You can bring it in at a time that is comfortable for you as long as it is around time of leaving </p>
-
-	<p onclick="copyOutputLink(this)">Bring water set around 5-6 </p>
-
-	<p onclick="copyOutputLink(this)">bring it in </p>
-
-	<p onclick="copyOutputLink(this)">📞 先打电话。 📞</p>
-
-	<p onclick="copyOutputLink(this)">Okay. </p>
-
-	<p onclick="copyOutputLink(this)">Thanks.</p>
-
-	<p onclick="copyOutputLink(this)">Stop.</p>
-	<p onclick="copyOutputLink(this)">please do not do that </p>
-
-	<p onclick="copyOutputLink(this)">yes</p>
-
-	<p onclick="copyOutputLink(this)">no</p>
-
-
-	<p onclick="copyOutputLink(this)">cd </p>
-
-	<p onclick="copyOutputLink(this)">git remote </p>
-
-	<p onclick="copyOutputLink(this)">git remote get-url origin</p>
-
-	<p onclick="copyOutputLink(this)">git config user.name</p>
-
-	<p onclick="copyOutputLink(this)">git config user.email</p>
-
-	<p onclick="copyOutputLink(this)">git add .</p>
-
-	<p onclick="copyOutputLink(this)">git reset</p>
-
-	<p onclick="copyOutputLink(this)">git diff --name-only --cached</p>
-
-
-	<p onclick="copyOutputLink(this)">git log</p>
-
-	<p onclick="copyOutputLink(this)">git commit -m ""</p>
-
-
-	<p onclick="copyOutputLink(this)">git push -u origin master</p>
-
-	<p onclick="copyOutputLink(this)">n</p>
-
-	<p onclick="copyOutputLink(this)">q</p>
-
-
-	<p onclick="copyOutputLink(this)">;</p>
-
-	<p onclick="copyOutputLink(this)">hello! I am retrieving your item! </p>
-
-	<p onclick="copyOutputLink(this)">Opening the airport </p>
-
-	<p onclick="copyOutputLink(this)">Thank you very much </p>
-
-
-
-
-	<p onclick="copyOutputLink(this)">emergency come quickly. You don't need to call to enter. just come in. </p>
-
-	<p onclick="copyOutputLink(this)">emergency come quickly.please still call before you enter. </p>
-
-
-
+	<main>
+	</main>
 
 </body>
 
