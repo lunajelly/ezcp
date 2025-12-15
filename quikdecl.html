@@ -24,7 +24,6 @@
 			font-style: italic;
 			color: #80f2cf;
 			background-color: #18187b;
-			font-style: italic;
 			width: 100%;
 		}
 
@@ -36,21 +35,15 @@
 		
 		const ui = {
 			//copy output link on click
-			copyOutputLink(ele) {
+			async copyOutputLink(ele) {
 				let copyText = ele.textContent;
-				navigator.clipboard.writeText(copyText)
-				      .then(() => {
-					l("copied");
-				})
-					.catch(() => {
-					l("not copied");
-				});
+				l("oo  aa");
+				await navigator.clipboard.writeText(copyText);
 			}
 		};
 		
-		window.addEventListener("load", (event) => {
+		window.addEventListener("load", (event) => {		
 				
-				l("oo");
 			//const msgs from quickdecl_msgs.js
 			const msgs_arr = msgs.trim().split('\n');
 			
@@ -60,12 +53,16 @@
 				const p = document.createElement("p");
 				p.textContent = msg;
 				p.tabIndex = 0;
-				p.onclick = ui.copyOutputLink(this);
 				fragment.append(p);
 			}
+			
+			
 			qs("main").append(fragment);
 			
 			qsa("p").forEach(ele => ele.addEventListener("click", ev => ui.copyOutputLink(ev.currentTarget)));
+			
+			
+			
 		} , {
 				once: true //cleanup
 			}); //End window.onload.
