@@ -161,6 +161,7 @@ pre
 bugfix
 gussy/refactor
 +feature 
+update
 remote notes
 
 (githubbed)
@@ -185,6 +186,7 @@ git checkout trunk
 git checkout -b public trunk
 git merge public
 git merge trunk
+git merge dev
 git remote
 git remote add origin
 git remote get-url origin
