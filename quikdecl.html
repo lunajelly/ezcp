@@ -2,37 +2,25 @@
 <html>
 
 <head>
-	<script src="ali-util.js"></script>
-	<script src="quickdecl-msgs.js"></script>
-	<script>		
-		
+	<script src="./sharedcode/lib-alishortjsfns.js"></script>
+	
+	<script src="./sharedcode/const-quickdeclmsgs.js"></script>
+	<script src="./sharedcode/fn-copy_text.js"></script>
+	<script src="./sharedcode/fn-documentfragment_of_eles_from_text_array.js"></script>
+	<script>
 		const ui = {
-			async copyText(ele) {
-				let text = ele.textContent;
-				await navigator.clipboard.writeText(text);
+			copy_text(ele_) {
+				copy_text(ele_);
 			}
 		};
 		
-		window.addEventListener("load", (e) => {		
-							
+		window.addEventListener("load", (e) => {							
 			
-			const fragment = document.createDocumentFragment();
+			const msgs_arr = quickdeclmsgs.trim().split('\n');
+
+			qs("main-active").append(documentfragment_of_eles_from_text_array(msgs_arr, "p"));
 			
-			//msgs from quickdecl-msgs.js
-			const msgs_arr = msgs.trim().split('\n');
-			
-			msgs_arr.forEach(msg => {
-				const p = document.createElement("p");
-				p.textContent = msg;
-				p.tabIndex = 0; //SR access
-				fragment.append(p);
-				});
-			
-			qs("main-active").append(fragment);
-			
-			
-			
-			qsa("p").forEach(el => el.addEventListener("click", ev => ui.copyText(ev.currentTarget)));
+			qsa("p").forEach(el => el.addEventListener("click", ev => ui.copy_text(ev.currentTarget)));
 	
 		} , { once: true }); //cleanup, End window.onload.
 		
@@ -54,6 +42,7 @@
 		
 		p:active {
 			color: #ff98ef;
+			background-color: #472bde;
 		}
 
 		p:hover { color: #2392b4; }
@@ -90,7 +79,7 @@
 
 </head>
 <body>
-	<intro-div>>>Click a paragraph below to copy</intro-div>
+	<intro-div>&gt;&gt;Click a paragraph below to copy</intro-div>
 	
 	<main-active></main-active>
 </body>
