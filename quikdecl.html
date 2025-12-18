@@ -29,9 +29,6 @@
 		html{
 			background-color: black;
 			color: white;
-/*			white-space: normal;*/
-/*			color: #000000;*/
-
 		}
 		body {
 			box-sizing: border-box; /* may be important for sizing/dmooth display */
@@ -54,14 +51,15 @@
 		}
 		
 		/* phone-only styles */
-		@media (width <=800px) {
+		/* 800 good enough for firefox mobile+scaling, chrome mobile scaled */
+		@media (width <=900px) {
 			html{
 				background-color: black; /* for bg color on phone */
-				color: rgba(22, 165, 66, 0.92);
+				color: white;
 			}
 
 			body {
-				font-size: 50px; /*absolute size req for firefox mobile scaling. em,rem,%,large all failed */  
+				font-size: 50px; /*absolute size req for firefox mobile scaling for my eyes. em,rem,%,large all failed */  
 				word-break: normal;
 				white-space: normal;
 			}
