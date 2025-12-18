@@ -36,9 +36,6 @@
 			font-size: large;
 		}
 
-		p { 
-			padding-left: 1em;
-		}
 		
 		p:active {
 			color: #ff98ef;
@@ -55,6 +52,13 @@
 			width: 100%;
 		}
 		
+		/* desktop only styles */
+		@media (width >=1000px) {
+			p { 
+				padding-left: 1em;
+			}
+		}
+		
 		/* phone-only styles */
 		@media (width <=1000px) {
 			html{
@@ -63,7 +67,7 @@
 
 			body {
 /*				color: #6e5fc3;*/
-				font-size: 50px;
+/*				font-size: 50px;*/
 /*
 				margin-right: 5px;
 				margin-left: 2px;
@@ -76,6 +80,8 @@
 				white-space: normal;
 			}
 		}
+
+
 
 
 	</style>
