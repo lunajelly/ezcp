@@ -32,9 +32,13 @@
 			background-color: black;
 			color: white;
 		}
+		
+		/* why is it impossible to test mobile browser accessibility scaling in desktop browsers? phone view does NOT cut it. */		
 		body {
 			box-sizing: border-box; /* may be important for sizing/dmooth display */
 			font-size: 1.2rem;
+			word-break: normal;
+			white-space: normal;
 		}
 		
 		p:active {
@@ -51,24 +55,7 @@
 			background-color: #18187b;
 			width: 100%;
 		}
-		
-		/* phone-only styles */
-		/* 800 good enough for firefox mobile+scaling, chrome mobile scaled */
-		/* why is it impossible to test mobile browser accessibility scaling in desktop browsers? phone view does NOT cut it. */
-		/* why does rem work on https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/font-size & not on my site??? */
-		/*@media (width <=900px) {
-			html{
-				background-color: black;  *//* for bg color on phone */
-			/*	color: white;
-			}
 
-			body {
-				font-size: 50px;  */
-				/*absolute size req for firefox mobile scaling for my eyes. em,rem,%,large all failed */  
-			/*	word-break: normal;
-				white-space: normal;
-			} */
-			
 		}
 	</style>
 
