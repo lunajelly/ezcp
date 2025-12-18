@@ -1,7 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-US">
 
 <head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	
 	<script src="./sharedcode/lib-alishortjsfns.js"></script>
 	
 	<script src="./sharedcode/const-quickdeclmsgs.js"></script>
@@ -52,6 +54,8 @@
 		
 		/* phone-only styles */
 		/* 800 good enough for firefox mobile+scaling, chrome mobile scaled */
+		/* why is it impossible to test mobile browser accessibility scaling in desktop browsers? phone view does NOT cut it. */
+		/* why does rem work on https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/font-size & not on my site??? */
 		@media (width <=900px) {
 			html{
 				background-color: black; /* for bg color on phone */
