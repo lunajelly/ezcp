@@ -162,6 +162,8 @@ gussy/refactor
 update
 remote notes
 compl
+desktop styles
+mobile styles
 
 (githubbed)
 index.html
