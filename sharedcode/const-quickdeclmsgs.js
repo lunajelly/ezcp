@@ -1,7 +1,6 @@
 // for quickdecl.html
 
 const quickdeclmsgs = `
-alert("whee");
 help
 help, emergency, just enter don't call
 do not leave. its an emergency.  
