@@ -192,6 +192,8 @@ git remote get-url origin
 git config user.name
 git config user.email
 git log
+git rebase -i 
+squash
 git status
 git pull 
 git show 
