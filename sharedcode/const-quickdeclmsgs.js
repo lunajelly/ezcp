@@ -1,7 +1,7 @@
 // for quickdecl.html
 
-const msgs = `
-
+const quickdeclmsgs = `
+alert("whee");
 help
 help, emergency, just enter don't call
 do not leave. its an emergency.  
@@ -185,8 +185,7 @@ git checkout public
 git checkout trunk
 git checkout -b public trunk
 git merge public
-git merge trunk
-git merge dev
+git merge --squash trunk
 git remote
 git remote add origin
 git remote get-url origin
