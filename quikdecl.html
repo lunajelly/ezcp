@@ -28,13 +28,13 @@
 	<style>
 		html{
 			background-color: black;
-/*			color: white;*/
+			color: white;
 /*			white-space: normal;*/
-			color: #000000;
+/*			color: #000000;*/
 
 		}
 		body {
-			box-sizing: border-box;
+			box-sizing: border-box; /* may be important for sizing/dmooth display */
 			font-size: 1.2rem;
 		}
 		
@@ -54,27 +54,18 @@
 		}
 		
 		/* phone-only styles */
-		@media (width <=700px) {
+		@media (width <=800px) {
 			html{
 				background-color: black; /* for bg color on phone */
-				color: rgba(12, 49, 250, 0.92);
+				color: rgba(22, 165, 66, 0.92);
 			}
 
 			body {
-				font-size: 50px;  
-/*				font-size: large;  */
-/*				if i don't define 2x,renders tiny */
+				font-size: 50px; /*absolute size req for firefox mobile scaling. em,rem,%,large all failed */  
 				word-break: normal;
 				white-space: normal;
-
 			}
 			
-/*
-			p {
-				font-size: large;
-*/
-				/* if i don't define 2x,renders tiny */
-/*			}*/
 		}
 	</style>
 
