@@ -31,10 +31,6 @@
 			color: white;
 		}
 		
-		body {
-				font-size: large;  
-/*				if i don't define 2x,renders tiny */
-			}
 		p:active {
 			color: #ff98ef;
 			background-color: #472bde;
@@ -51,19 +47,21 @@
 		}
 		
 		/* phone-only styles */
-		@media (width <=1100px) {
+		@media (width <=800px) {
 			html{
 				background-color: black; /* for bg color on phone */
 				color: blue;
 			}
 
 			body {
-				font-size: large;  
+				font-size: 1.2rem;  
+/*				font-size: large;  */
 /*				if i don't define 2x,renders tiny */
 			}
 			
 			p {
-				font-size: large; /* if i don't define 2x,renders tiny */
+/*				font-size: large;*/
+				/* if i don't define 2x,renders tiny */
 				word-break: normal;
 				white-space: normal;
 			}
