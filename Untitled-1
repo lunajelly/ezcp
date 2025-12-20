@@ -1,6 +1,0 @@
-on mobile styles:
-
-@media (width <=900px) { } for specifics. 1000px origial
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-works w relative. without this, need absolute
