@@ -5,6 +5,8 @@ help
 help, emergency, just enter don't call
 do not leave. its an emergency.  
 nebulizer
+help me
+帮我
 进来 😊。把门关紧 😱 。请不做什么东西我不问您。
 
 Put the nebulizer on me 
