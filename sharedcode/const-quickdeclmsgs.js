@@ -78,8 +78,11 @@ loud it hurts. if you cant understand over text talk to me in quiet area or come
 你刚才打电话了? 请给我发短信💬,我不可以打电话🚫📞。
 You called just now? What is it? Please text me, I can't use the phone.
 
+come here i need to talk about something
+i'll leave door open do it even if i sleep
 
 put food away
+Bring water set.
 
 egg cheese 
 beef breakfast sausage
